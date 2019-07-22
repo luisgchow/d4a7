@@ -17,7 +17,7 @@ services:
   php:
     image: php540
     volumes:
-      - ./:/var/www/html
+      - ./code/:/var/www/html
     expose:
       - 80
     ports:
