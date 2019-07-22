@@ -19,6 +19,7 @@ pipeline {
 
 		stage('Build'){
 			steps{
+				'sudo docker container rm php540'
 				sh 'sudo docker build --tag=php540 .'
 			     }
 
