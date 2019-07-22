@@ -19,7 +19,8 @@ pipeline {
 
 		stage('Build'){
 			steps{
-				'sudo docker image rm php540'
+				sh 'sudo docker-compoe down'
+				sh 'sudo docker image rm php540'
 				sh 'sudo docker build --tag=php540 .'
 			     }
 
@@ -27,7 +28,6 @@ pipeline {
 				}
 		stage('docker-compose'){
 			steps{
-				sh 'sudo docker-compose down'
 				sh 'sudo docker-compose up -d' 
 
 			     }	
